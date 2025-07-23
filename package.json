@@ -1,0 +1,22 @@
+{
+  "name": "songs-microservice",
+  "version": "1.0.0",
+  "description": "A microservice for managing songs using Node.js, Express, and DynamoDB.",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "node src/app.js",
+    "docker:build": "docker build -t songs-microservice .",
+    "docker:run": "docker run -p 3000:3000 --env-file .env songs-microservice",
+    "docker:compose:up": "docker-compose up -d",
+    "docker:compose:down": "docker-compose down",
+    "docker:compose:logs": "docker-compose logs -f"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "aws-sdk": "^2.1000.0",
+    "body-parser": "^1.19.0"
+  },
+  "author": "",
+  "license": "ISC"
+}

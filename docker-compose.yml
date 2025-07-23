@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  songs-api:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - AWS_REGION=us-east-1
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+    restart: unless-stopped
+    networks:
+      - songs-network
+
+networks:
+  songs-network:
+    driver: bridge
